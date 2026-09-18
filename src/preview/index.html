@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I-Tab 智能分组主页</title>
+  <link rel="stylesheet" href="./preview.css">
+</head>
+<body>
+  <div class="group-home-container" id="app-root">
+    <!-- 顶部全景导航条：毛玻璃浮动分组胶囊切换器 -->
+    <header class="group-home-navbar">
+      <div class="navbar-left">
+        <div class="brand-badge">
+          <img src="../../assets/icon128.png" alt="I-Tab" class="brand-icon">
+          <span class="brand-text">I-Tab</span>
+        </div>
+        <div class="navbar-group-pills" id="navbar-group-pills">
+          <!-- 动态渲染各分组快捷切换胶囊 -->
+        </div>
+      </div>
+    </header>
+
+    <!-- 中间核心区域：分组聚合标题与卡片画廊 (1:1 对齐截图 2) -->
+    <main class="group-home-main">
+      <div class="main-content-wrapper">
+        <!-- 聚合信息头 -->
+        <div class="group-detail-header" id="group-detail-header">
+          <!-- 动态渲染大标题、编辑、收藏全部 -->
+        </div>
+
+        <!-- 卡片响应式网格 -->
+        <div class="group-cards-grid" id="group-cards-grid">
+          <!-- 动态渲染组内网页大图卡片与新建卡片 -->
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script type="module" src="./preview.ts"></script>
+</body>
+</html>

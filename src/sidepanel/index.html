@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabbit 标签页工作台</title>
+  <link rel="stylesheet" href="./sidepanel.css">
+</head>
+<body>
+  <div class="tabbit-layout" id="app-root">
+    <!-- 左侧垂直侧边栏 (Tabbit 侧栏 1:1) -->
+    <aside class="tabbit-sidebar">
+      <!-- 搜索框与 AI 整理快捷触发 -->
+      <div class="sidebar-search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="tab-search" placeholder="搜索标签页..." autocomplete="off">
+        <button id="clear-search-btn" class="clear-search-btn" style="display: none;">✕</button>
+        <button id="sidebar-ai-btn" class="icon-btn-ai" title="点击执行 AI 智能整理当前标签页 (Cmd+Shift+G)">
+          <img src="../../assets/icon128.png" class="ai-btn-icon" alt="AI 智能整理">
+        </button>
+      </div>
+      <!-- 分组与标签垂直树状导航 (带左侧贯穿线条) -->
+      <div class="sidebar-tree" id="sidebar-tree">
+        <!-- 动态渲染各分组及子标签 -->
+      </div>
+
+      <!-- 4. 底部新建标签页按钮 -->
+      <div class="sidebar-footer">
+        <button id="sidebar-new-tab-btn" class="btn-new-tab">
+          <span class="plus-icon">+</span> 新建标签页
+        </button>
+      </div>
+    </aside>
+
+    <!-- 右侧主预览区 (Tabbit 截图 2 卡片预览画廊) -->
+    <main class="tabbit-main" id="tabbit-main">
+      <!-- 动态渲染选中分组的所有标签卡片预览与操作栏 -->
+    </main>
+  </div>
+
+  <script type="module" src="./sidepanel.ts"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "i-tab",
+  "version": "1.0.0",
+  "description": "Next-generation LLM-powered Chrome tab workspace with glassmorphic side panel and zero native tab bar clutter",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.312",
+    "puppeteer-core": "^25.10.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.2.0"
+  }
+}

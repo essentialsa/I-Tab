@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabbit 扩展设置</title>
+  <link rel="stylesheet" href="./options.css">
+</head>
+<body>
+  <div class="settings-wrapper">
+    <div class="settings-card">
+      <header class="settings-header">
+        <div class="logo">✨</div>
+        <div class="titles">
+          <h1>Tabbit 智能整理配置</h1>
+          <p>配置国内主流大模型 API，享受标签栏原生彩色线条与 Tabbit 预览画廊体验</p>
+        </div>
+      </header>
+
+      <form id="settings-form">
+        <!-- 提供商预设 -->
+        <div class="form-group">
+          <label for="provider-select">模型提供商 (Provider)</label>
+          <select id="provider-select" class="form-control">
+            <option value="deepseek">DeepSeek (推荐：高性价比、分类精准)</option>
+            <option value="qwen">阿里通义千问 (DashScope / Qwen)</option>
+            <option value="custom">自定义 OpenAI 兼容接口</option>
+          </select>
+        </div>
+
+        <!-- API Key -->
+        <div class="form-group">
+          <label for="api-key-input">API Key</label>
+          <div class="input-with-action">
+            <input
+              type="password"
+              id="api-key-input"
+              class="form-control"
+              placeholder="请输入你的 API Key (如 sk-...)"
+              required
+            >
+            <button type="button" id="toggle-key-btn" class="input-action-btn" title="显示/隐藏 Key">👁️</button>
+          </div>
+          <p class="field-hint" id="key-hint">
+            获取 DeepSeek Key: <a href="https://platform.deepseek.com/" target="_blank">platform.deepseek.com</a>
+          </p>
+        </div>
+
+        <!-- API Base URL -->
+        <div class="form-group">
+          <label for="base-url-input">API 请求基础地址 (Base URL)</label>
+          <input
+            type="text"
+            id="base-url-input"
+            class="form-control"
+            placeholder="https://api.deepseek.com/v1"
+            required
+          >
+        </div>
+
+        <!-- 模型名称 -->
+        <div class="form-group">
+          <label for="model-input">模型名称 (Model)</label>
+          <input
+            type="text"
+            id="model-input"
+            class="form-control"
+            placeholder="deepseek-chat"
+            required
+          >
+          <p class="field-hint" style="color: #4f46e5; margin-top: 6px;">
+            ⚡ <strong>速度建议</strong>：推荐使用 <code>deepseek-chat</code> 或 <code>qwen-plus</code>。切勿填写 <code>deepseek-reasoner</code> 或 <code>r1</code> 思考模型，深度思考会导致 10~30 秒额外等待，而标签整理仅需毫秒级快速分类。
+          </p>
+        </div>
+
+        <!-- 分组折叠偏好 -->
+        <div class="form-group checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="auto-collapse-input" checked>
+            <span class="checkbox-text">
+              <strong>自动折叠非当前分组</strong>
+              <small>整理完毕后自动收起未在浏览的标签组，让标签栏最干净清爽</small>
+            </span>
+          </label>
+        </div>
+
+        <!-- 超限自动整理偏好 -->
+        <div class="form-group checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="auto-organize-input" checked>
+            <span class="checkbox-text">
+              <strong>开启标签超限自动整理</strong>
+              <small>当窗口打开的未固定标签总数达到阈值时，自动在后台静默触发 AI 整理收纳</small>
+            </span>
+          </label>
+        </div>
+
+        <!-- 自动整理阈值设定 -->
+        <div class="form-group" id="threshold-container">
+          <label for="auto-threshold-input">自动整理触发阈值 (标签数量)</label>
+          <input
+            type="number"
+            id="auto-threshold-input"
+            class="form-control"
+            min="2"
+            max="50"
+            value="6"
+            required
+          >
+          <p class="field-hint">
+            默认值为 <strong>6</strong>。当窗口内的标签总数达到此数值且存在新打开的标签时，将在后台自动执行智能归类。
+          </p>
+        </div>
+
+        <!-- 连通性提示条 -->
+        <div id="status-alert" class="status-alert" style="display: none;"></div>
+
+        <!-- 动作按钮 -->
+        <div class="form-actions">
+          <button type="button" id="test-btn" class="btn btn-secondary">
+            <span>⚡</span> 测试连接
+          </button>
+          <button type="submit" id="save-btn" class="btn btn-primary">
+            保存设置
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="./options.ts"></script>
+</body>
+</html>
