@@ -89,7 +89,7 @@
 
 ```bash
 # 1. 克隆本仓库
-git clone https://github.com/your-username/I-Tab.git
+git clone https://github.com/essentialsa/I-Tab.git
 cd I-Tab
 
 # 2. 安装依赖
@@ -217,7 +217,7 @@ Built with **TypeScript** and **Vite** following Chrome Extension Manifest V3 gu
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/I-Tab.git
+git clone https://github.com/essentialsa/I-Tab.git
 cd I-Tab
 
 # Install dependencies
@@ -270,9 +270,9 @@ npm run build
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are warmly welcomed!
-Feel free to check out the [issues page](https://github.com/your-username/I-Tab/issues).
+Feel free to check out the [issues page](https://github.com/essentialsa/I-Tab/issues).
 
-1. Fork the Project (`https://github.com/your-username/I-Tab/fork`)
+1. Fork the Project (`https://github.com/essentialsa/I-Tab/fork`)
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'feat: Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
